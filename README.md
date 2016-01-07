@@ -1,5 +1,5 @@
 # Tags For Chat
-![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
+![screen](screen.jpg)
 #English
 
 # Why do you need this plugin?
