@@ -3,16 +3,16 @@
 #include <cstrike>
 #include <csx>
 
-#define PLUGIN "Tags to chat"
-#define VERSION "2.1"
+#define PLUGIN "Tags for chat"
+#define VERSION "2.1.1"
 #define AUTHOR "uMk0"
 new tags_num = 0;
 public plugin_init() {
-register_plugin(PLUGIN, VERSION, AUTHOR);//Регистрируем плагин
+register_plugin(PLUGIN, VERSION, AUTHOR);//register a plugin | Регистрируем плагин
 
 register_message(get_user_msgid("SayText"),"goChangeText");
 
-register_cvar("tags_rank_enabled", "1");
+register_cvar("tags_rank_enabled", "0");
 
 new configsDir[64];
 get_configsdir(configsDir, 63);
@@ -35,15 +35,15 @@ register_dictionary("tags.txt");
 }
 public goChangeText(msgId,msgDest,msgEnt){	
 
-    new id = get_msg_arg_int(1);//Получаем id отправителя сообщения
+    new id = get_msg_arg_int(1);//We get the id of the message sender | Получаем id отправителя сообщения
 	
-        if(!is_user_connected(id))return PLUGIN_HANDLED;    //Остановка если игрок вне сети
+        if(!is_user_connected(id))return PLUGIN_HANDLED;    //Stop if the player is online | Остановка если игрок вне сети
         
 		new prefixRank[255],flags_player = get_user_flags(id), string_flags[32], controlchat[256], tmpchat[256], prefix[255];
 		
 		if(get_cvar_num("tags_rank_enabled") == 1) getRank(id,prefixRank);
 		
-		get_flags(flags_player,string_flags,31);//Форматируем ранее полученные вфлаги в строку в привычном виде  
+		get_flags(flags_player,string_flags,31);//Format the previously received flags in a row in the usual form | Форматируем ранее полученные в флаги в строку в привычном виде  
 		
 		for(new i = 1; i <= tags_num; i++){
 			new tmpnameCvar[255],tmpCvar[255];
@@ -59,21 +59,21 @@ public goChangeText(msgId,msgDest,msgEnt){
 			}
 		}
 		
-		get_msg_arg_string(2,controlchat, charsmax(controlchat));//Перехватываем сообщение	
-		if(!equal(controlchat,"#Cstrike_Chat_All")){//проверяем чат общий или коммандный чтобы добавление работало там и там
-            //тут коммандный чат
-			add(tmpchat,charsmax(tmpchat),prefixRank);//Добовляем префикс
-            add(tmpchat,charsmax(tmpchat),prefix);//Добовляем префикс
-            add(tmpchat,charsmax(tmpchat),controlchat);//Ну и не забываем про текст :))
+		get_msg_arg_string(2,controlchat, charsmax(controlchat));//Intercept messages | Перехватываем сообщение	
+		if(!equal(controlchat,"#Cstrike_Chat_All")){//check the general chat or team worked to add here and there | проверяем чат общий или командный чтобы добавление работало там и там
+            //then the team chat | тут командный чат
+			add(tmpchat,charsmax(tmpchat),prefixRank);//Add prefixed | Добавляем префикс
+            add(tmpchat,charsmax(tmpchat),prefix);//Add prefixed | Добавляем префикс
+            add(tmpchat,charsmax(tmpchat),controlchat);//And do not forget about the text :) | Ну и не забываем про текст :)
         }else{
             //тут общий чат
 
-			add(tmpchat,charsmax(tmpchat),prefixRank);//Добовляем префикс
-            add(tmpchat,charsmax(tmpchat),prefix);//Добовляем префикс
-            add(tmpchat,charsmax(tmpchat),"^x03 %s1: ^x01%s2");//Ну и не забываем про текст :))
+			add(tmpchat,charsmax(tmpchat),prefixRank);//Add prefixed | Добавляем префикс
+            add(tmpchat,charsmax(tmpchat),prefix);//Add prefixed | Добавляем префикс
+            add(tmpchat,charsmax(tmpchat),"^x03 %s1: ^x01%s2");//And do not forget about the text :) | Ну и не забываем про текст :)
             }
 		
-        set_msg_arg_string(2,tmpchat);//Отправляем наше сообщение
+        set_msg_arg_string(2,tmpchat);//Send message | Отправляем наше сообщение
         return PLUGIN_CONTINUE;//КОНЕЦ!
 		
 		
