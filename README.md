@@ -19,9 +19,9 @@ This plug-in makes life easier for the owner of the server. Namely, if the owner
 
 # How to take and juzat this miracle?)
 
-1) Each file has a description and examples of it can all be done and if it is not clear write to job@umk0.ru
-2) Compile tags.sma which is located in the scripting you can do in the http://www.compiler.amx-x.ru/
-3) Get it all in addons folder
+1. Each file has a description and examples of it can all be done and if it is not clear write to job@umk0.ru
+2. Compile tags.sma which is located in the scripting 
+3. Get it all in addons folder
 
 #Русский
 
@@ -42,6 +42,6 @@ This plug-in makes life easier for the owner of the server. Namely, if the owner
 
 # Как взять и юзать это чудо?)
 
-1) В каждом файле есть описание и примеры по ним можно все сделать а если не понятно то пишите на job@umk0.ru
-2) Скомпилировать tags.sma который находится в папке scripting это можно сделать на http://www.compiler.amx-x.ru/
-3) Загрузить это все в папку addons
+1. В каждом файле есть описание и примеры по ним можно все сделать а если не понятно то пишите на job@umk0.ru
+2. Скомпилировать tags.sma который находится в папке scripting 
+3. Загрузить это все в папку addons

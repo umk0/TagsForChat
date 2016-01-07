@@ -1,37 +1,4 @@
-﻿#______________________________
-#                              |
-# English                      |
-#                              |
-# !1 - Neutral color chat      |   
-# !2 - Color team              |
-# !3 - Green color             |
-#______________________________|
-#                              |
-# Русский                      |
-#                              |
-# !1 - Обычный цвет чата       |
-# !2 - Цвет комманды           |
-# !3 - Зеленый Цвет            |
-#______________________________|
-#
-#________________________________________________________________
-#                                                                |
-# English                                                        |
-#                                                                |
-# Adding the prefix here and occurs in the file /config/tags.cfg |
-# In this file to add the flag, we need to write                 |
-# TAGS_prefix number = Prefix                                    |
-#________________________________________________________________|
-#                                                                |
-# Русский                                                        |
-#                                                                |
-# Добавление префиксов происходит тут и в файле /config/tags.cfg |
-# В данном файле для добавления флага нам нужно написать         |
-# TAGS_Номер префикса = Префикс                                  |
-#________________________________________________________________|
-#
-
-[en]
+﻿[en]
 TAGS_RANK = !2[Rank %d]
 TAGS_1 = !2[VIP]
 TAGS_2 = !2[VIP - Girl]
@@ -41,7 +8,6 @@ TAGS_5 = !3[Сh. Аdministrator]
 TAGS_6 = !3[Сh. Аdministrator - Girl]
 TAGS_7 = !3[D.Ch. Administrator]
 TAGS_8 = !3[D.Ch. Administrator - Girl]
-
 [ru]
 TAGS_RANK = !2[Ранк %d] 
 TAGS_1 = !2[VIP]
